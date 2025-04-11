@@ -2,8 +2,8 @@ import feedparser
 import requests
 import os
 
-FEED_URL = os.getenv("https://rss.app/feeds/dSZqf0Vbx9g8N7IF.xml")
-WEBHOOK_URL = os.getenv("https://discord.com/api/webhooks/1360145434777096294/Kn6dRgJlJerbkeZlHxBRlksHU_CjHcEsSPSQswfDu0l1D4ISxgOwY8QZXsa4vI6q07ln")
+FEED_URL = os.getenv("FEED_URL")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 def main():
     feed = feedparser.parse(FEED_URL)
