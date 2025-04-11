@@ -27,6 +27,12 @@ jobs:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: python rss_to_discord.py
 
+      - name: Set up Git for commit
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
       - name: Save last_link.txt and push
         run: |
           git config --global user.name "github-actions"
